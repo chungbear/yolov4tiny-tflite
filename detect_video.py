@@ -126,10 +126,10 @@ def main(_argv):
         #output the final result (cosmetic -> book -> laptop)
         output = ''
         if (output1):
-            output = 'cosmetic'
+            output = 'makeup'
         else:
             if (output0):
-                output = 'book'
+                output = 'reading'
             else:
                 if(output2):
                     output = 'laptop'
