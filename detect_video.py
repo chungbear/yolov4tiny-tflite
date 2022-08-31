@@ -134,6 +134,11 @@ def main(_argv):
                 if(output2):
                     output = 'laptop'
                     
+        #output the final result to 'result.txt'
+        f = open('result.txt', 'w')
+        f.write(output)
+        f.close()
+                    
         result = np.asarray(image)
         cv2.namedWindow("result", cv2.WINDOW_AUTOSIZE)
         result = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
