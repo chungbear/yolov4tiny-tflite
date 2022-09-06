@@ -13,6 +13,7 @@ import cv2
 import numpy as np
 from tensorflow.compat.v1 import ConfigProto
 from tensorflow.compat.v1 import InteractiveSession
+from yeelight import SmartBulb
 
 flags.DEFINE_string('framework', 'tf', '(tf, tflite, trt')
 flags.DEFINE_string('weights', './checkpoints/yolov4-416',
@@ -125,14 +126,21 @@ def main(_argv):
                 
         #output the final result (cosmetic -> book -> laptop)
         output = ''
+        bulb = SmartBulb('172.20.10.6')
         if (output1):
             output = 'makeup'
+            bulb.power_on()
+            bulb.set_rgb(255,255,0)
         else:
             if (output0):
                 output = 'reading'
+                bulb.power_on()
+                bulb.set_rgb(255,255,255)
             else:
                 if(output2):
                     output = 'laptop'
+                    bulb.power_on()
+                    bulb.set_rgb(0,150,255)
                     
         #output the final result to 'result.txt'
         f = open('result.txt', 'w')
