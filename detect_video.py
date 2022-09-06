@@ -130,12 +130,12 @@ def main(_argv):
         if (output1):
             output = 'makeup'
             bulb.power_on()
-            bulb.set_rgb(255,255,0)
+            bulb.set_rgb(255,255,255)
         else:
             if (output0):
                 output = 'reading'
                 bulb.power_on()
-                bulb.set_rgb(255,255,255)
+                bulb.set_rgb(255,255,0)
             else:
                 if(output2):
                     output = 'laptop'
